@@ -1,0 +1,64 @@
+#include <iostream>
+#include <cmath>
+
+using std::cin; using std::cout; using std::endl;
+
+double bmrMen(double weight, double height, double age);
+double bmrWomen(double weight, double height, double age);
+
+int main(){
+	char gender;
+	double weight;
+	double feet;
+	double inches;
+	double height;
+	double age;
+	double BMR;
+	int bagels;
+	const int bagelcalories = 354;
+
+	cout << "Let me calculate your BMR." << endl;
+	cout << "First are you male or female?[M/F] " << endl;
+	cin >> gender;
+	
+	cout << endl << "How much do you weight? " << endl;
+	cin >> weight;
+	
+	cout << endl << "How tall are you in feet and inches? " << endl;
+	cout << "Feet: ";
+	cin >> feet;
+	cout << "Inches: ";
+	cin >> inches;
+	
+	height = (12 * feet) + inches;
+
+	cout << endl << "How old are you? " << endl;
+	cin >> age;
+	
+	if (gender == 'M')
+		BMR = bmrMen(weight, height, age);
+
+	else if (gender == 'F')
+		BMR = bmrWomen(weight, height, age);
+	
+	cout << endl << "Your BMR is " << BMR << endl;
+
+
+	bagels = ceil(BMR / bagelcalories);
+
+	cout << endl << "Based on your BMR you may eat " << bagels << " bagel(s)!" << endl;
+
+}
+
+double bmrMen(double weight, double height, double age){
+	
+	double BMR;
+	BMR = 66 + (6.3 * weight) + (12.9 * height) - (6.8 * age);
+	return BMR;
+}
+double bmrWomen(double weight, double height, double age){
+
+	double BMR;
+	BMR = 655 + (4.3 * weight) + (4.7 * height) - (4.7 * age);
+	return BMR;
+}
