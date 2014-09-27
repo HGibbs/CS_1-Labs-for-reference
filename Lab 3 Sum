@@ -1,0 +1,19 @@
+#include <iostream>
+
+using std:: cin; using std:: cout; using std:: endl;
+
+int main(){
+	int i = 0;
+	int sum = 0;
+
+	cout << "Input sequence of integers (zero to stop):";
+	cin >> i;
+
+	while (i != 0){
+		sum = sum + i;
+		cin >> i;
+	}
+
+	cout << "The sum of the numbers are: " << sum << endl;
+
+}
