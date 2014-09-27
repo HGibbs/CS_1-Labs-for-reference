@@ -1,0 +1,135 @@
+int main()
+{
+	int tens, ones;
+
+	cout << "You may type any number from 1 to 99. I will spell it out for you. Be sure to type a 2-digit number with a space between digits: ";
+	cin >> tens;
+	cin >> ones;
+
+	cout << "Your number is spelled: ";
+
+	if (tens == 1)
+	{
+
+		switch (ones)
+		{
+
+		case 0:
+			cout << "Ten";
+			break;
+
+		case 1: //Why isn't it Onety One?
+			cout << "Eleven";
+			break;
+
+		case 2:
+			cout << "Twelve";
+			break;
+
+		case 3:
+			cout << "Thirteen";
+			break;
+
+		case 4:
+			cout << "Fourteen";
+			break;
+
+		case 5:
+			cout << "Fifteen";
+			break;
+
+		case 6:
+			cout << "Sixteen";
+			break;
+
+		case 7:
+			cout << "Seventeen";
+			break;
+
+		case 8:
+			cout << "Eighteen";
+			break;
+
+		case 9:
+			cout << "Nineteen";
+			break;
+		}
+	}
+	else
+	{
+		switch (tens){
+
+		case 2:
+			cout << "Twenty";
+			break;
+
+		case 3:
+			cout << "Thirty";
+			break;
+
+		case 4:
+			cout << "Forty";
+			break;
+
+		case 5:
+			cout << "Fifty";
+			break;
+
+		case 6:
+			cout << "Sixty";
+			break;
+
+		case 7:
+			cout << "Seventy";
+			break;
+
+		case 8:
+			cout << "Eighty";
+			break;
+
+		case 9:
+			cout << "Ninety";
+			break;
+		}
+
+		switch (ones){
+
+		case 1:
+			cout << "One";
+			break;
+
+		case 2:
+			cout << "Two";
+			break;
+
+		case 3:
+			cout << "Three";
+			break;
+
+		case 4:
+			cout << "Four";
+			break;
+
+		case 5:
+			cout << "Five";
+			break;
+
+		case 6:
+			cout << "Six";
+			break;
+
+		case 7:
+			cout << "Seven";
+			break;
+
+		case 8:
+			cout << "Eight";
+			break;
+
+		case 9:
+			cout << "Nine";
+			break;
+		}
+	}
+	cout << endl;
+}
