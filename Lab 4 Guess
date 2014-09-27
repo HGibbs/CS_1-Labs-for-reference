@@ -1,0 +1,28 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+
+using std::cin; using std::cout; using std::endl;
+
+int main(){
+	int rand_Num;
+	int input;
+	srand(time(NULL));
+	rand_Num = rand() % 100;
+
+	cout << "Good Day! Lets play a game!" << endl;
+	cout << "Guess what number I'm thinking between 0-99!!" << endl;
+
+	do{
+
+		cin >> input;
+		if (input > rand_Num){
+			cout << "Wrong! Try a lower number!" << endl;
+		}
+		else if (input < rand_Num){
+			cout << "Wrong! Try a higher number!" << endl;
+
+		}
+	} while (input != rand_Num);
+	cout << "Right! You are amazing!" << endl;
+}
