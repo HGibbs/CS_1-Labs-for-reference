@@ -1,0 +1,72 @@
+#include <iostream> 
+#include <cstdlib>
+#include <ctime>
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+void initialize(int wins[], int);
+bool check(int, int wins[],int);
+void draw(int wins[], int);
+int entry();
+void printOut(int, int wins[], int);
+const int arraySize = 10;
+
+int main(){
+	int wins[arraySize];
+	int userRanNum;
+	srand(time(NULL));
+
+	initialize(wins, arraySize);
+	draw(wins, arraySize);
+	userRanNum = entry();
+	printOut(userRanNum, wins, arraySize);
+}
+
+void initialize(int wins[], int arraySize){
+	for (int i = 0; i < arraySize; ++i){
+		wins[i] = -1;
+	}
+}
+
+bool check(int ranNum, int wins[], int arraySize){
+	for (int i = 0; i < arraySize; ++i){
+		if (ranNum == wins[i]){
+			return true;
+		}
+	}
+			return false;
+}
+
+void draw(int wins[], int arraySize){
+	int ranNum;
+	int i = 0;
+
+	while (i < arraySize){
+		ranNum = rand() % 100;
+		if (check(ranNum, wins, arraySize)){
+			ranNum = rand() % 100;
+		}
+			else{
+				wins[i] = ranNum;
+				++i;
+			}
+	}
+}
+
+int entry(){
+	int userRanNum;
+
+	cout << "Please enter a single number from 0 to 99.\n";
+	cin >> userRanNum;
+	return userRanNum;
+}
+
+void printOut(int userRanNum, int wins[], int arraySize){
+	cout << "The lottery numbers are: ";
+	for (int i = 0; i < arraySize; ++i){
+		cout << wins[i] << " ";
+	}
+	cout << endl << "Your number was: " << userRanNum << endl;
+}
